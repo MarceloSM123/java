@@ -18,7 +18,8 @@ public class TestCalculadora {
 	  //PROMEDIAR
 	    double promediar=calc.promediar(1, 2, 3);
 	    System.out.println("PROMEDIO: "+promediar);
-	  
+	    //mostrar Resultado
+		   calc.mostrarResultado();
 	
 	
 	}
