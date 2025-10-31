@@ -9,9 +9,13 @@ public class TestCalculadora {
 		System.out.println("SUMA: "+a);
 		int resta=calc.restar(8, 9);
 		System.out.println("RESTA: "+resta);
+		//multiplicacion
 	    double multiplicar=calc.multiplicar(2.5, 4.5);
-	    System.out.println("multiplicacion: "+multiplicar);
-	
+	    System.out.println("MULTIPLICACION: "+multiplicar);
+	    //dividir
+	    double dividir=calc.dividir(1.5,1.85);
+	    System.out.println("DIVIDIR: "+dividir);
+	    
 	
 	}
 
