@@ -15,7 +15,11 @@ public class TestCalculadora {
 	    //dividir
 	    double dividir=calc.dividir(1.5,1.85);
 	    System.out.println("DIVIDIR: "+dividir);
-	    
+	  //PROMEDIAR
+	    double promediar=calc.promediar(1, 2, 3);
+	    System.out.println("PROMEDIO: "+promediar);
+	  
+	
 	
 	}
 
