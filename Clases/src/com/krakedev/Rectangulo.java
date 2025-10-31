@@ -10,4 +10,5 @@ public class Rectangulo {
 	public double calcularPerimetro() {
 		return (2*base)+(2*altura);
 	}
+	
 }
