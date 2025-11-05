@@ -7,6 +7,9 @@ public class TestPersona {
 		Persona p; // 1. declaro una variable p de tipo persona
 		p=new Persona();//2: intanciar un objeto persona, referenciado
 		Persona p1=new Persona();
+		Persona p3=new Persona("Marcelo");//
+		System.out.println("NOMBRE: "+p3.getNombre());
+		Persona p4=new Persona("Marcelo",33,1.66);//
 		
 		// 3. acceso a los atributos
 		
