@@ -4,9 +4,9 @@ public class TestProducto {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Producto productoA=new Producto();
-		Producto productoB =new Producto();
-		Producto productoC=new Producto();
+		Producto productoA=new Producto("hola1","hola2",12.56f,2);
+		Producto productoB =new Producto("hola3","hola4",12.36f,3);
+		Producto productoC=new Producto("hola5","hola6",0.23f,4);
 		// modificcacion de atributos productoA
 		
 		//productoA.nombre="Paracetamol";

@@ -4,7 +4,7 @@ public class TestFecha {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Fecha fecha1=new Fecha();
+		Fecha fecha1=new Fecha(2000,12,12); 
 		// fecha1.anio=2000; no es posible si la variable esta en privado
 		// usamos el metodo setAnio
 		fecha1.setAnio(1000);// nos permite modificar

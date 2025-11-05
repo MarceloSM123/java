@@ -4,9 +4,9 @@ public class TestCuadrado {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Cuadrado c1= new Cuadrado();
-		Cuadrado c2= new Cuadrado();
-		Cuadrado c3= new Cuadrado();
+		Cuadrado c1= new Cuadrado(0.1);
+		Cuadrado c2= new Cuadrado(0.2);
+		Cuadrado c3= new Cuadrado(0.3);
 		System.out.println("*-----CUADRADO 1----");
 		//c1.lado=10.25; ----> si la variable esta en public
 		c1.setLado(10.25);  // usando metodo si la variable esta en pruvate
