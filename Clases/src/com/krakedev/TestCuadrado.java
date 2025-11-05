@@ -8,20 +8,26 @@ public class TestCuadrado {
 		Cuadrado c2= new Cuadrado();
 		Cuadrado c3= new Cuadrado();
 		System.out.println("*-----CUADRADO 1----");
-		c1.lado=10.25;
-		System.out.println("Lado: "+c1.lado);
+		//c1.lado=10.25; ----> si la variable esta en public
+		c1.setLado(10.25);  // usando metodo si la variable esta en pruvate
+		//System.out.println("Lado: "+c1.lado);
+		System.out.println("Lado: "+c1.getLado());
 		System.out.println("Area: "+c1.calcularArea());
 		System.out.println("Perimetro: "+c1.calcularPerimetro());
 		
 		System.out.println("*-----CUADRADO 2----");
-		c2.lado=5.69;
-		System.out.println("Lado: "+c2.lado);
+		//c2.lado=5.69;
+		c2.setLado(5.69);
+		//System.out.println("Lado: "+c2.lado);
+		System.out.println("Lado: "+c2.getLado());
 		System.out.println("Area: "+c2.calcularArea());
 		System.out.println("Perimetro: "+c2.calcularPerimetro());
 		
 		System.out.println("*-----CUADRADO 1----");
-		c3.lado=10.25;
-		System.out.println("Lado: "+c3.lado);
+		//c3.lado=10.25;
+		c3.setLado(0.25);
+		//System.out.println("Lado: "+c3.lado);
+		System.out.println("Lado: "+c3.getLado());
 		System.out.println("Area: "+c3.calcularArea());
 		System.out.println("Perimetro: "+c3.calcularPerimetro());
 		

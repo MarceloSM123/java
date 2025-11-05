@@ -36,6 +36,7 @@ public class Fecha {
 		 * tipo de retorno: void no hay retorno, esta funcion modifica el valor de la variable
 		 * nombre: set seguio por el nombre de la variable a modifica
 		 *LA FUNCION RECIBE PARAMETROS DEL MISMO TIPO DE LA VARIABLE A MODIFICAR POR ESO AMBAS SON INT
+		para usar el mismo nombre de la variable usamo .this
 		 */
 		anio=nuevoAnio;
 	}
@@ -45,6 +46,7 @@ public class Fecha {
 		 * tipo de retorno: no hay retorno asi usamos void
 		 * nombre: set seguido por el nombre de la variable a modificar
 		 * el tipo de dato de la variable de ingreso el el mismo de la variable a modificar
+		   para usar el mismo nombre de la variable usamos .this
 		 */
 		mes=nuevoMes;
 	}
@@ -57,6 +59,12 @@ public class Fecha {
 		 */
 		dia=nuevoDia;
 	}
+	
+	/* para generar automaticamente estos metodos usamos la siguiente ruta: 
+	 
+	 click derecho > source >generate getters and setters
+	
+	 * */
 	
 }
 
