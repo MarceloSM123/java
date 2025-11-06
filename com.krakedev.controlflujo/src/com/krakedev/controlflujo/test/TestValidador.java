@@ -7,9 +7,10 @@ public class TestValidador {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Validar validador =new Validar();
-		validador.ValidarEdad(18);
+		validador.ValidarEdad(-1);
 		validador.ValidarEdad(20);
-		validador.ValidarEdad(10);
+		validador.ValidarEdad(14);
+		validador.ValidarEdad(5);
 	}
 
 }

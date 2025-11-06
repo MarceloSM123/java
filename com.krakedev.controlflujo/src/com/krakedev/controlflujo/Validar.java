@@ -4,9 +4,15 @@ public class Validar {
 	public void ValidarEdad(int edad) {
 		if(edad>=18) { // sentencia if
 			System.out.println("Es mayor de edad");
+		}else if(edad>=12 && edad<18){
+			System.out.println("Es adolecente");
+		}else if (edad>0 && edad<12) {
+			System.out.println("Es niño");
 		}else {
-			System.out.println("Es menor de edad");
+			System.out.println("Edad incorrecta");
 		}
+		
+		// sintaxis similar al de javasctipt
 	}
 
 }
