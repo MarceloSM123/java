@@ -8,6 +8,16 @@ public class TestPersona {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Persona p1=new Persona();
+		p1.setNombre("Marcelo");
+		p1.setApellido("Salcedo");
+		
+		Direccion d2=new Direccion();// creamos un dato tipo direccion para usae el setDireccion 
+		d2.setCallePrincipal("calle L");
+		d2.setCalleSecundaria("calle K");
+		p1.setDireccion(d2);// requiere un dato de tipo direccion
+		
+		
+		
 		String nombre=p1.getNombre();
 		Direccion d1=p1.getDireccion();
 		System.out.println(nombre);
