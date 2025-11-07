@@ -6,35 +6,52 @@ public class Persona {
 	private int edad;
 	private double estatura;
 	private Direccion direccion; // es de tipo direccion de la clase Direccion
+
 	public String getNombre() {
 		return nombre;
 	}
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+
 	public String getApellido() {
 		return apellido;
 	}
+
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
 	}
+
 	public Direccion getDireccion() { // el metodo devuelve un dato de tipo direccion
 		return direccion;
 	}
+
 	public void setDireccion(Direccion direccion) {
 		this.direccion = direccion;
 	}
+
 	public int getEdad() {
 		return edad;
 	}
+
 	public void setEdad(int edad) {
 		this.edad = edad;
 	}
+
 	public double getEstatura() {
 		return estatura;
 	}
+
 	public void setEstatura(double estatura) {
 		this.estatura = estatura;
+	}
+
+	public void imprimir() {
+		if(direccion!=null) {
+		System.out.println("nombre:" + nombre + "apellido: " + apellido + "direccion: " + direccion.getCallePrincipal()
+				+ " " + direccion.getNumero() + " " + direccion.getCalleSecundaria());}
+		else {System.out.println("nombre:" + nombre + "apellido: " + apellido + "direccion: null" );}
 	}
 
 }

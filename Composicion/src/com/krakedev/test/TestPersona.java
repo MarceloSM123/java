@@ -10,10 +10,12 @@ public class TestPersona {
 		Persona p1=new Persona();
 		p1.setNombre("Marcelo");
 		p1.setApellido("Salcedo");
+
 		
 		Direccion d2=new Direccion();// creamos un dato tipo direccion para usae el setDireccion 
 		d2.setCallePrincipal("calle L");
 		d2.setCalleSecundaria("calle K");
+		d2.setNumero("n-35");
 		p1.setDireccion(d2);// requiere un dato de tipo direccion
 		
 		
@@ -24,6 +26,15 @@ public class TestPersona {
 		// d1 esta null, y trato de invocar a un metodo con esa variable
 		System.out.println(d1.getCallePrincipal());
 		//null.algunMetodo();
+		p1.imprimir();
+		
+		
+		//que suecede si...
+		Persona p2=new Persona();
+		p2.setNombre("luis");
+		p2.imprimir();
+		
+		// la escepcion especifica la linea que genera el error, se debe analizar dicha linea
 	}
 
 }
