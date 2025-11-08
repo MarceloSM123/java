@@ -6,6 +6,21 @@ public class Direccion {
 	private String numero;
 	private double latitud;
 	private double longitud;
+	
+	
+	// constructor parametros
+	
+	public Direccion(String callePrincipal, String calleSecundaria, String numero) {
+		//super();
+		this.callePrincipal = callePrincipal;
+		this.calleSecundaria = calleSecundaria;
+		this.numero = numero;
+	}
+	// Constructor estandar
+	public Direccion() {
+		
+	}
+	
 	public String getCallePrincipal() {
 		return callePrincipal;
 	}

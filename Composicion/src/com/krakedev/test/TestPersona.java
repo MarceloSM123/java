@@ -31,8 +31,16 @@ public class TestPersona {
 		
 		//que suecede si...
 		Persona p2=new Persona();
+		//usamos el constructor con parametros para reducir el numero de lineas
+		//
+		Direccion d3=new Direccion("c1","c2","S3");
 		p2.setNombre("luis");
+		p2.setDireccion(d3);
 		p2.imprimir();
+		
+		Persona p3=new Persona();
+		p3.setDireccion(new Direccion("C4","C5","O-67"));
+		p3.imprimir();
 		
 		// la escepcion especifica la linea que genera el error, se debe analizar dicha linea
 	}
