@@ -204,12 +204,49 @@ public class MaquinaDulces {
 	}
 	
 	// BUSACAR CELDA PRODUCTO
-	public Celda bucarCeldaProducto(String codigo) {
+	public Celda buscarCeldaProducto(String codigo) {
 		Producto p1=celda1.getProducto();
 		Producto p2=celda2.getProducto();
 		Producto p3=celda3.getProducto();
 		Producto p4=celda4.getProducto();
 		
+		
+		if(p1!=null && codigo==p1.getCodigo()) {
+			return celda1;
+		}
+		if(p2!=null && codigo==p2.getCodigo()) {
+			return celda2;
+		}
+		if(p3!=null && codigo==p3.getCodigo()) {
+			return celda3;
+		}
+		if(p4!=null && codigo==p4.getCodigo()) {
+			return celda4;
+		}
+		return null;
+		
+		/*if(p1!=null) {
+			if(codigo==p1.getCodigo()) {
+				return celda1;
+			}
+		}
+		else if(p2!=null) {
+			if(codigo==p2.getCodigo()) {
+				return celda2;
+			}
+		}
+		else if(p3!=null) {
+			if(codigo==p3.getCodigo()) {
+				return celda3;
+			}
+		}
+		else if(p4!=null) {
+			if(codigo==p4.getCodigo()) {
+				return celda4;
+			}
+		} else {return null;};*/
+		
+		/*
 		if(codigo==p1.getCodigo()) {
 			return celda1;
 		}
@@ -221,17 +258,19 @@ public class MaquinaDulces {
 		}
 		else if(codigo==p4.getCodigo()) {
 			return celda4;
-		}else{return null;}
+		}else{return null;}*/
 	}
 	
 	// METOO INCREMENTAR PRODUCTOS
 	
 	public void incrementarProductos(String codigo,int ItemsNuevos) {
-		Celda celdaEncontrada=bucarCeldaProducto(codigo);
+		Celda celdaEncontrada=buscarCeldaProducto(codigo);
 		int nuevo=celdaEncontrada.getStock();
 		celdaEncontrada.setStock(ItemsNuevos+nuevo);
 		
 	}
+	
+	//VENDER
 	
 	public void vender(String codigo) {
 		if(codigo==celda1.getCodigo()) {
@@ -239,7 +278,7 @@ public class MaquinaDulces {
 			int stockActual=celda1.getStock();
 			 celda1.setStock(stockActual-1);
 			 saldo=p.getPrecio()+saldo;
-			 mostrarProductos();
+			// mostrarProductos();
 			 
 		}
 		else if(codigo==celda2.getCodigo()) {
@@ -247,22 +286,24 @@ public class MaquinaDulces {
 			int stockActual=celda2.getStock();
 			 celda2.setStock(stockActual-1);
 			 saldo=p.getPrecio()+saldo;
-			 mostrarProductos();
+			// mostrarProductos();
 		}
 		else if(codigo==celda3.getCodigo()) {
 			Producto p=celda3.getProducto();
 			int stockActual=celda3.getStock();
 			 celda3.setStock(stockActual-1);
 			 saldo=p.getPrecio()+saldo;
-			 mostrarProductos();
+			// mostrarProductos();
 		}
 		else if(codigo==celda4.getCodigo()) {
 			Producto p=celda4.getProducto();
 			int stockActual=celda4.getStock();
 			 celda4.setStock(stockActual-1);
 			 saldo=p.getPrecio()+saldo;
-			 mostrarProductos();
+			// mostrarProductos();
 		}else {System.out.println(" ");}// revisar
+		mostrarProductos();
+		System.out.println("El saldo es: "+saldo);
 		
 	}
 	
