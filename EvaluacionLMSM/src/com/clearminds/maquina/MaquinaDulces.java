@@ -101,8 +101,15 @@ public class MaquinaDulces {
 		}else{return null;}
 	}
 	
-	// CARGAR PRODUCTO
-	public void buscarCelda(Producto p1,String codigo, int stock) {
+	// NO CONSIDERAR
+	
+	/*public void buscarCelda(Producto p1,String codigo, int stock) {
+		Celda celdaRecuperada=buscarCelda(codigo);
+		celdaRecuperada.ingresarProducto(p1,stock);
+	}
+	*/
+	// CARGAR PRODUCTO----PENDIENTE
+	public void cargarProducto(Producto p1,String codigo, int stock) {
 		Celda celdaRecuperada=buscarCelda(codigo);
 		celdaRecuperada.ingresarProducto(p1,stock);
 	}
@@ -114,32 +121,47 @@ public class MaquinaDulces {
 		Producto p1=celda1.getProducto();
 		System.out.println("Codigo celda: "+celda1.getCodigo());
 		System.out.println("stock actual: "+celda1.getStock());
+		if(p1==null) {
+			System.out.println("La celda no tiene producto !!!");
+			}else {
 		System.out.println("Nombre Productoa: "+p1.getNombre());
 		System.out.println("Precio producto: "+p1.getPrecio());
-		
+	      }
 		//celda 2
 		System.out.println("------------------------------");
 		Producto p2=celda2.getProducto();
 		System.out.println("Codigo celda: "+celda2.getCodigo());
 		System.out.println("stock actual: "+celda2.getStock());
+		if(p2==null) {
+			System.out.println("La celda no tiene producto !!!");
+			}else {
 		System.out.println("Nombre Productoa: "+p2.getNombre());
 		System.out.println("Precio producto: "+p2.getPrecio());
+	      }
 		
 		//celda 3
 		System.out.println("------------------------------");
 		Producto p3=celda3.getProducto();
 		System.out.println("Codigo celda: "+celda3.getCodigo());
 		System.out.println("stock actual: "+celda3.getStock());
+		if(p3==null) {
+			System.out.println("La celda no tiene producto !!!");
+			}else {
 		System.out.println("Nombre Productoa: "+p3.getNombre());
 		System.out.println("Precio producto: "+p3.getPrecio());
+	      }
 		
 		//celda 4
 		System.out.println("------------------------------");
 		Producto p4=celda4.getProducto();
 		System.out.println("Codigo celda: "+celda4.getCodigo());
 		System.out.println("stock actual: "+celda4.getStock());
+		if(p4==null) {
+			System.out.println("La celda no tiene producto !!!");
+			}else {
 		System.out.println("Nombre Productoa: "+p4.getNombre());
 		System.out.println("Precio producto: "+p4.getPrecio());
+	      }
 		
 	}
 	
