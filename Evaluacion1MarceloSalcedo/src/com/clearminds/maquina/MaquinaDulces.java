@@ -116,5 +116,53 @@ public class MaquinaDulces {
 	    celdaEncontrada.setStock(celdaEncontrada.getStock()+cantidadItems);
 	}
 	
+	public void vender(String codigo) {
+		Celda celdaEncontrada=buscarCeldaProducto(codigo);
+		if(celdaEncontrada!=null) {
+		int stockActual=celdaEncontrada.getStock();
+		celdaEncontrada.setStock(stockActual-1);
+		saldo=saldo+celdaEncontrada.getProducto().getPrecio();
+		System.out.println("Saldo: "+saldo);
+		}
+		/* if(celdaEncontrada.getProducto()!=null && celdaEncontrada != null) {
+		celdaEncontrada.setStock(celdaEncontrada.getStock()-1); 
+			saldo=saldo+celdaEncontrada.getProducto().getPrecio();
+		}*/
+		
 	}
+	
+	public double venderConCambio(String codigo, double pago) {
+		Celda celdaEncontrada=buscarCeldaProducto(codigo);
+		if(celdaEncontrada!=null) {
+		int stockActual=celdaEncontrada.getStock();
+		celdaEncontrada.setStock(stockActual-1);
+		saldo=saldo+celdaEncontrada.getProducto().getPrecio();
+		System.out.println("Saldo: "+saldo);
+		return pago-celdaEncontrada.getProducto().getPrecio();
+		}
+		return 0.0;
+	}
+	
+	public ArrayList<Producto> buscarMenores(double limite){
+		Celda c1;
+
+		ArrayList<Producto> resultado=new ArrayList<Producto>();
+		//boolean a=false;
+		for(int i=0;i<celdas.size();i++) {
+			 c1=celdas.get(i);
+	//	if(c1.getProducto().getCodigo().equals(codigo)) {
+			 if(c1.getProducto()!=null ) {
+				 if(c1.getProducto().getPrecio()<limite) {
+					 resultado.add(c1.getProducto());
+
+				 }
+		}
+			 
+		}
+		return resultado;
+		}
+		
+	}
+	
+	//}
 //}
