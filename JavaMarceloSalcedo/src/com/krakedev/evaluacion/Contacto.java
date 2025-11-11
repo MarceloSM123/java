@@ -1,10 +1,14 @@
 package com.krakedev.evaluacion;
 
+import java.util.ArrayList;
+
 public class Contacto {
 	private String cedula;
 	private String nombre;
 	private String apellido;
 	private Direccion direccion;
+	private ArrayList<Telefono> telefonos =new ArrayList();
+	
 	public Contacto(String cedula, String nombre, String apellido) {
 		//super();
 		this.cedula = cedula;
@@ -36,6 +40,12 @@ public class Contacto {
 		this.direccion = direccion;
 	}
 	
+	public ArrayList<Telefono> getTelefonos() {
+		return telefonos;
+	}
+	public void setTelefonos(ArrayList<Telefono> telefonos) {
+		this.telefonos = telefonos;
+	}
 	public void imprimir() {
 	
 	//Metodo testContacto	
@@ -59,6 +69,31 @@ public class Contacto {
 		}
 	}
 	
+	public void agregarTelefono(Telefono t1) {
+		telefonos.add(t1);
+	}
 	
+	public void mostrarTelefonos() {
+		Telefono t;
+		System.out.println("Telefonos con estado C ");
+		for(int i =0; i<telefonos.size();i++) {
+			t=telefonos.get(i);
+			if(t.getEstado().equals("C")){
+				System.out.println("Numero: "+t.getNumero()+", Tipo; "+t.getTipo());
+			}
+		}
+	}
 	
+	public ArrayList<Telefono> recuperarIncorrectos() {
+		Telefono t;
+		ArrayList<Telefono> ti =new ArrayList();
+		for(int i =0; i<telefonos.size();i++) {
+			t=telefonos.get(i);
+			if(t.getEstado().equals("E")){
+				ti.add(t);
+			}
+		}
+		
+		return ti;
+	}
 }
