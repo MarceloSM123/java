@@ -6,7 +6,8 @@ public class Persona {
  
  
   public Persona(String cedula, String nombre) {
-	//super();
+	super(); // la palabra super significa que usa por defecto el constructor vacio 
+	// de la clase toObject
 	this.cedula = cedula;
 	this.nombre = nombre;
 }

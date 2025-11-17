@@ -7,6 +7,7 @@ public class Perro extends Animal{// perro hereda de animal
 	
 	@Override
 	public void dormir() {
+		super.dormir(); //con super. usa la funcion de la clase padre 
 		System.out.println("Perro durmiendo");
 	}
 }
