@@ -4,7 +4,7 @@ public class Ejercicio1 {
 	public static void main(String[] args) {
 		System.out.println("inicio");
 		// String a=null; // genera una excepcion que activa al bloque catch
-		String a="xxxss";
+		String a="xxxss"; // no se genera la excepcion pero igual se ejecuta el bloque finally
 		//si no hay excepciones entra al bloque try
 		try {
 			a.substring(3);
