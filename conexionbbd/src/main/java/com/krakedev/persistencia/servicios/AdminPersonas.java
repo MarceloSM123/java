@@ -88,5 +88,37 @@ public class AdminPersonas {
 	}
 	}
 	
+	public static void eliminar(int codigo) {
+		Connection con=null;
+		PreparedStatement ps=null;
+	try {
+		 con=ConexionBDD.conectar();// SI SE DECLARA DENTRO DEL TRY SOLO SIRVE EN EL TRY 
+		//System.out.println("INSERTAR");
+		 ps=con.prepareStatement("DELETE FROM transacciones WHERE codigo = ?");
+				//ingresamos los datos
+					ps.setInt(1, codigo);
+				
+					ps.executeUpdate();
+	}catch(Exception e) {
+		//mostrar el error al usuario
+		//System.out.println(e.getMessage());
+		//loggear el error
+		LOGGER.error("Error Eliminar",e);
+		e.printStackTrace();
+		//throw e;
+	}finally {
+		//cerrar conexion 
+		try {
+			con.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			// e.printStackTrace(); en lugar va un logger
+			LOGGER.error("\"Error con la base de datos\"", e);
+		//sino usa logger usar esto	throw new Exception("Error con la base de datos");
+			//System.out.println("ERROR INFRAESTRUCTURA");
+		}
+	}
+	}
+	
 	}
 
