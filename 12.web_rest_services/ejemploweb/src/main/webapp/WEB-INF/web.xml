@@ -14,7 +14,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>MiServlet</servlet-name>
-		<url-pattern>/rws/*</url-pattern>
+		<url-pattern>/rest/*</url-pattern>
 	</servlet-mapping>
 
 
