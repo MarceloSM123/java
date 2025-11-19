@@ -10,9 +10,15 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class TestConexion {
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
+import com.krakedev.persistencia.servicios.AdminPersonas;
+
+public class TestConexion {
+	private static final Logger LOGGER=LogManager.getLogger(TestConexion.class);
 	public static void main(String[] args) {
+	//	private static final Logger LOGGER=LogManager.getLogger(TestConexion.class);
 		PreparedStatement ps=null;
 		// CONEXION CON POSTGRESQL
 		Connection connection =null;
@@ -43,20 +49,25 @@ public class TestConexion {
 			//ps.setDate(5, 
 			try {
 				Date fecha=sdf.parse(fechaStr);
-				System.out.println(fecha);
+				//System.out.println(fecha);
+				LOGGER.debug(fechaStr);
 				long fechaMilis=fecha.getTime();
-				System.out.println(fechaMilis);
+				//System.out.println(fechaMilis);
+				LOGGER.debug(fechaMilis);
 				// crea yb java.sqlDate, partiendo de un java.util.Date
 				java.sql.Date fechaSQL=new java.sql.Date(fechaMilis);
-				System.out.println(fechaSQL);
+				//System.out.println(fechaSQL);
+				LOGGER.debug(fechaSQL);
 				ps.setDate(5, fechaSQL);
 				// para la hora 
 				Time timeSQL=new Time(fechaMilis);
-				System.out.println(timeSQL);
+				//System.out.println(timeSQL);
+				LOGGER.debug(timeSQL);
 			
 			} catch (ParseException e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+				//e.printStackTrace();
+				LOGGER.error ("Conexion fallida",e);
 			}
 			ps.executeUpdate();
 			
@@ -70,6 +81,7 @@ public class TestConexion {
 				ps.setInt(1, 1);
 				ps.setString(2, "12345");
 				BigDecimal precio = new BigDecimal("12.12");
+				LOGGER.debug(precio);
 				ps.setBigDecimal(3, precio);
 				ps.setString(4, "D");
 				ps.setDate(5, java.sql.Date.valueOf("1999-01-12"));
@@ -85,7 +97,8 @@ public class TestConexion {
 			
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			//e.printStackTrace();
+			LOGGER.error ("Conexion fallida",e);
 		}
 		
 		// SEGUNDA TABLA 
