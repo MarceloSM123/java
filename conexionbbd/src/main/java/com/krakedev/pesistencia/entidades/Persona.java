@@ -49,6 +49,19 @@ public Persona(int codigo, String numero_cuenta, double monto, String tipo, Stri
 		System.out.println("ingrese en el formato: HH:mm:ss");
 	}
 }
+
+public Persona(int codigo, String numero_cuenta, BigDecimal monto, String tipo, Date fecha, Time hora) {
+    this.codigo = codigo;
+    this.numero_cuenta = numero_cuenta;
+    this.monto = monto;
+    this.tipo = tipo;
+    this.fecha = fecha;  // ya viene lista desde PostgreSQL
+    this.hora = hora;    // ya viene lista desde PostgreSQL
+}
+
+
+
+
 public int getCodigo() {
 	return codigo;
 }
@@ -86,7 +99,17 @@ public void setHora(Time hora) {
 	this.hora = hora;
 }
 
-
+@Override
+public String toString() {
+    return "Persona{" +
+           "codigo=" + codigo +
+           ", numero_cuenta='" + numero_cuenta + '\'' +
+           ", monto=" + monto +
+           ", tipo='" + tipo + '\'' +
+           ", fecha=" + fecha +
+           ", hora=" + hora +
+           '}';
+}
 
 
 }
