@@ -3,6 +3,7 @@ package com.krakedev.entidades;
 public class Cliente {
 	private String cedula;
 	private String nombre;
+	private int numeroHijos;
 	
 	
 	public Cliente() {
@@ -36,11 +37,24 @@ public class Cliente {
 		this.nombre = nombre;
 	}
 
+	
+	public int getNumeroHijos() {
+		return numeroHijos;
+	}
+
+
+	public void setNumeroHijos(int numeroHijos) {
+		this.numeroHijos = numeroHijos;
+	}
+
 
 	@Override
 	public String toString() {
-		return "Cliente [cedula=" + cedula + ", nombre=" + nombre + "]";
+		return "Cliente [cedula=" + cedula + ", nombre=" + nombre + ", numeroHijos=" + numeroHijos + "]";
 	}
+
+
+
 	
 	
 	
