@@ -113,4 +113,69 @@ public class ClientesBDD {
 	}
 	
 	
+	public Cliente buscarPorPK(String cedulaBusqueda) throws KrakeDevException{
+		
+		Connection con=null;
+		ResultSet rs=null;
+		Cliente cliente=null;
+		try {
+			con=ConexionBDD.obtenerConexion();
+			PreparedStatement ps=
+					con.prepareStatement("select cedula,nombre,numeroHijos from clientes where cedula=?");
+			ps.setString(1, cedulaBusqueda);
+			rs=ps.executeQuery();
+			
+			if(rs.next()) {
+				System.out.println("Existe el cliente");
+				String cedula = rs.getString("cedula");
+				String nombre = rs.getString("nombre");
+				int numeroHijos = rs.getInt("numeroHijos");
+				cliente = new Cliente(cedula,nombre,numeroHijos);
+							}else {
+								System.out.println("No existe el cliente");
+							}
+		} catch (KrakeDevException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			throw e;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			throw new KrakeDevException("Error al consultar. Detalle: "+e.getMessage());
+		}
+		
+		return cliente;
+	}
+	
+	public ArrayList<Cliente> numeroHijos(int hijos) throws KrakeDevException{
+		ArrayList<Cliente> clientes =new ArrayList();
+		Connection con=null;
+		ResultSet rs=null;
+		Cliente cliente=null;
+		try {
+			con=ConexionBDD.obtenerConexion();
+			PreparedStatement ps=
+					con.prepareStatement("select cedula,nombre,numeroHijos from clientes where numeroHijos>=?");
+			ps.setInt(1, hijos);
+			rs=ps.executeQuery();
+			
+			while(rs.next()) {
+				String cedula = rs.getString("cedula");
+				String nombre = rs.getString("nombre");
+				int numeroHijos = rs.getInt("numeroHijos");
+				cliente = new Cliente(cedula,nombre,numeroHijos);
+				clientes.add(cliente);
+			}
+		} catch (KrakeDevException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			throw e;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			throw new KrakeDevException("Error al consultar. Detalle: "+e.getMessage());
+		}
+		
+		return clientes;
+	}
 }
